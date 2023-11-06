@@ -12323,11 +12323,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DA5\\API_Admin\\Models\\Models.csproj",
+      "projectUniqueName": "C:\\Users\\ACER\\OneDrive\\Tài liệu\\GitHub\\DA5\\API_Admin\\Models\\Models.csproj",
       "projectName": "Models",
-      "projectPath": "D:\\DA5\\API_Admin\\Models\\Models.csproj",
+      "projectPath": "C:\\Users\\ACER\\OneDrive\\Tài liệu\\GitHub\\DA5\\API_Admin\\Models\\Models.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "D:\\DA5\\API_Admin\\Models\\obj\\",
+      "outputPath": "C:\\Users\\ACER\\OneDrive\\Tài liệu\\GitHub\\DA5\\API_Admin\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

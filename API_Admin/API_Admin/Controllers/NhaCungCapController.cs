@@ -1,0 +1,101 @@
+﻿using API_Admin.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+namespace API_Admin.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class NhaCungCapController : ControllerBase
+    {
+        private readonly QlchXeMayVietTrungContext _dbcontext;
+        public NhaCungCapController(QlchXeMayVietTrungContext dbcontext)
+        {
+            _dbcontext = dbcontext;
+        }
+
+
+        [HttpGet("getAllData")]
+        public async Task<IActionResult> getalldata()
+        {
+            var data = await _dbcontext.NhaCungCaps.ToArrayAsync();
+            return Ok(data);
+        }
+
+
+        [HttpGet("getdatabyID/{id}")]
+        public async Task<IActionResult> getdatabyID(int id)
+        {
+            var data = await _dbcontext.NhaCungCaps.FindAsync(id);
+            return Ok(data);
+
+        }
+
+
+        [HttpPost("create")]
+        public async Task<IActionResult> Create(NhaCungCap nhaCungCap)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _dbcontext.NhaCungCaps.Add(nhaCungCap);
+            await _dbcontext.SaveChangesAsync();
+            return Ok();
+        }
+
+
+        [HttpPut("edit/{id}")]
+        public async Task<IActionResult> Edit(int id, NhaCungCap nhaCungCap)
+        {
+            if (id != nhaCungCap.MaNhaCungCap)
+            {
+                return BadRequest();
+            }
+
+            var details = await _dbcontext.NhaCungCaps.AsTracking().FirstOrDefaultAsync(x => x.MaNhaCungCap == id);
+            if (details == null)
+            {
+                throw new Exception();
+            }
+
+            details.TenNhaCungCap = nhaCungCap.TenNhaCungCap;
+            details.DiaChi = nhaCungCap.DiaChi;
+            details.SoDienThoai = nhaCungCap.SoDienThoai;
+            details.Email = nhaCungCap.Email;
+
+            _dbcontext.Entry(details).State = EntityState.Modified;
+            await _dbcontext.SaveChangesAsync();
+            return Ok();
+
+        }
+
+
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (_dbcontext.NhaCungCaps == null)
+            {
+                return BadRequest();
+            }
+
+            var details = await _dbcontext.NhaCungCaps.FindAsync(id);
+            _dbcontext.NhaCungCaps.Remove(details);
+            await _dbcontext.SaveChangesAsync();
+            return Ok();
+        }
+
+
+        [HttpGet("search/{key}")]
+        public async Task<IActionResult> Search(string key)
+        {
+            var data = await _dbcontext.NhaCungCaps.Where(x => x.TenNhaCungCap.Contains(key)
+                        || x.SoDienThoai.Contains(key)
+                        || x.DiaChi.Contains(key)
+                        || x.Email.Contains(key)).ToListAsync();
+            return Ok(data);
+        }
+    }
+}

@@ -12510,11 +12510,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DA5\\API_Admin\\API_Admin\\API_Admin.csproj",
+      "projectUniqueName": "C:\\Users\\ACER\\OneDrive\\Tài liệu\\GitHub\\DA5\\API_Admin\\API_Admin\\API_Admin.csproj",
       "projectName": "API_Admin",
-      "projectPath": "D:\\DA5\\API_Admin\\API_Admin\\API_Admin.csproj",
+      "projectPath": "C:\\Users\\ACER\\OneDrive\\Tài liệu\\GitHub\\DA5\\API_Admin\\API_Admin\\API_Admin.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "D:\\DA5\\API_Admin\\API_Admin\\obj\\",
+      "outputPath": "C:\\Users\\ACER\\OneDrive\\Tài liệu\\GitHub\\DA5\\API_Admin\\API_Admin\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -12536,8 +12536,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\DA5\\API_Admin\\Models\\Models.csproj": {
-              "projectPath": "D:\\DA5\\API_Admin\\Models\\Models.csproj"
+            "C:\\Users\\ACER\\OneDrive\\Tài liệu\\GitHub\\DA5\\API_Admin\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\ACER\\OneDrive\\Tài liệu\\GitHub\\DA5\\API_Admin\\Models\\Models.csproj"
             }
           }
         }

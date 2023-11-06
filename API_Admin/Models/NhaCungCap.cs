@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace API_Admin.Models;
 
@@ -15,5 +16,6 @@ public partial class NhaCungCap
 
     public string? Email { get; set; }
 
+    
     public virtual ICollection<HoaDonNhap> HoaDonNhaps { get; set; } = new List<HoaDonNhap>();
 }

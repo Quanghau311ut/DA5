@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FFbIRGPyKnlCvitvuku+QkbZnhfk409+cvkGiWFOZ675TvIy/TG8PctUo0Vr6Q+X1lsBRMzWDOu5ta3NTay1CA==",
+  "dgSpecHash": "7gs3iTatxRXGtInehhYszNgP9x/re+Dv3UQ3PiVfc4GkqbQwswmb3TWI6H4CSou8sxl7zzwMT01tNUABRDBXBw==",
   "success": true,
-  "projectFilePath": "D:\\DA5\\API_Admin\\API_Admin\\API_Admin.csproj",
+  "projectFilePath": "C:\\Users\\ACER\\OneDrive\\Tài liệu\\GitHub\\DA5\\API_Admin\\API_Admin\\API_Admin.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ACER\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
