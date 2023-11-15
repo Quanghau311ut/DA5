@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+.table-responsive>.table-bordered {
+  border: 0;
+  font-size: 15px;
+}
+.modal-dialog{
+  max-width: 1040px;
+  font-size: 15px;
+  max-height: 400px;
+}
+.modal-title{
+  font-weight: bolder;
+}

@@ -1,0 +1,74 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">DANH SÁCH MENU</h6>
+  </div>
+  <div class="card-body">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-bottom: 15px;">
+      Thêm mới
+    </button>
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Tên menu</th>
+            <th>Trạng thái</th>
+            <th>Tác vụ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of myResult | paginate: { itemsPerPage: 5, currentPage: p }; let i = index" (click)="openEditModal(item.maMenu)">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.tenMenu }}</td>
+            <td>
+              <input type="checkbox" [checked]="item.trangThai" disabled />
+            </td>
+            <td>
+              <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" style="margin-right: 10px;" (click)="openEditModal(item.maMenu)">
+                Sửa
+              </button>
+              <button type="button" class="btn btn-danger" (click)="delete(item.maMenu)">
+                Xóa
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="p = $event" style="font-size: 15px; text-align: center;"></pagination-controls>
+    </div>
+  </div>
+</div>
+
+<!-- Form chung -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Thông tin menu</h5>
+        <button id="close-form" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="submitForm()">
+          <div class="form-group">
+            <label for="tenMenu" class="col-form-label">Tên menu</label>
+            <input type="text" class="form-control" id="tenMenu" [(ngModel)]="formData.tenMenu" name="tenMenu" required>
+          </div>
+          <div class="form-group">
+            <label for="moTa" class="col-form-label">Mô tả</label>
+            <p-editor  id="moTa" [(ngModel)]="formData.moTa" name="moTa" [style]="{ height: '320px' }"></p-editor>
+          </div>
+          <div class="form-group">
+            <label for="trangThai" class="col-form-label" >Trạng thái</label>
+            <input type="checkbox"  id="trangThai" [(ngModel)]="formData.trangThai" name="trangThai"style='margin-left:30px; '>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+            <button type="submit" class="btn btn-primary">{{ isEditMode ? 'Cập nhật' : 'Thêm mới' }}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

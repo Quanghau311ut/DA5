@@ -17,6 +17,18 @@ namespace API_Admin
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            //CORS
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(name: "AllowOrigin",
+                    builder =>
+                    {
+                        builder.WithOrigins("*")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+                    });
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -25,6 +37,9 @@ namespace API_Admin
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            //cors
+            app.UseCors("AllowOrigin");
 
             app.UseHttpsRedirection();
 

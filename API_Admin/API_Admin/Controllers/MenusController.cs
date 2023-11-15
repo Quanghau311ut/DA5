@@ -24,7 +24,7 @@ namespace API_Admin.Controllers
         }
 
 
-        [HttpGet("getData/{id}")]
+        [HttpGet("getDatabyID/{id}")]
         public async Task<IActionResult> getdatabyID(int id)
         {
             var data = await _dbcontext.Menus.FindAsync(id);
